@@ -1,0 +1,18 @@
+{
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:101.0) Gecko/20100101 Firefox/101.0",
+    "X-CSRF-TOKEN": "aSSjcxrQsiTg8AiJ2W9uazJkd6dwcohSkZ8lu5ZT",
+    "Cookie": {
+        "XSRF-TOKEN": "eyJpdiI6IjFqTWNVUVBrVmxuVkhrbmpXTG9BSHc9PSIsInZhbHVlIjoibmMwVWJmWmpWV2hTOFpkUTdGaksvb2dlOWY4QytiU2Y0dDdjSmc3V3NNUmRaNWJ2TXRvbm9OYTc3L29pZW1EeFp5TVlodmxETE4wZ0FVRktya2FxV2crTC8xVERLVHpoTmRjTmFZVDE1UE4wV2R3S2UxL0tJMTgyUy9WWDkzN04iLCJtYWMiOiJlYjdiODYwZjQwZmVjYmQ4NTAyZDk3MjM4NDZlODRmYzg3ODBjZTk1ZGI2YWRiOWUxY2NlMGM0OGU1ZGU0ZWZjIiwidGFnIjoiIn0%3D",
+        "tvnow_session": "eyJpdiI6Ii9yYlZDY09iR1g4eGpYSXphekxWR1E9PSIsInZhbHVlIjoiRHNyV3VQcGw0VFkra2tXTVV6UnUybTF3Qy9lS29zOHV0SlpaWGI0a3pDMzZWdTh2VkNpUElhK0NOZnlQS0k5aEJpcTlEQU92bXV1VHZ1LzcvcGRxUUtvT1pUNHc3TWFHMWZnMFFkTzVnbWpXYUJBemtEbnd2VEhJd0h0VUZQQ2oiLCJtYWMiOiIzZDdkNmE3Y2E2YjYwNDkxYjNhYmFmNDU1NmM1MTIwMDUyYjAyYzdkYTUzNjViYzQ2ODk4MzA4Njg1NDY4OWY2IiwidGFnIjoiIn0%3D"
+    },
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
+    "Alt-Used": "thetvapp.to",
+    "Connection": "keep-alive",
+    "Content-Type": "application/json",
+    "Content-Length": "27",
+    "Accept": "*/*",
+    "Accept-Language": "en-US,en;q=0.5",
+    "Accept-Encoding": "gzip, deflate, br"
+}
