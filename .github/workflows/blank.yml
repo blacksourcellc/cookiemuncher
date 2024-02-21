@@ -1,0 +1,68 @@
+name: Fetch Cookies and Save to Branch
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Run every hour
+
+jobs:
+  fetch-cookies:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install express node-fetch
+
+      - name: Fetch Cookies
+        run: |
+          const express = require('express');
+          const fetch = require('node-fetch');
+          const fs = require('fs');
+
+          const url = 'https://thetvapp.to/';
+
+          const app = express();
+          const PORT = 3000;
+
+          app.get('/get-cookies', async (req, res) => {
+              try {
+                  const response = await fetch(url);
+
+                  if (response.ok) {
+                      const headers = response.headers;
+                      const setCookieHeaders = headers.raw()['set-cookie'];
+
+                      // Write cookies to a file
+                      fs.writeFileSync('cookies.json', JSON.stringify({ cookies: setCookieHeaders }));
+
+                      res.json({ cookies: setCookieHeaders });
+                  } else {
+                      console.error('Request failed with status', response.status);
+                      res.status(response.status).json({ error: 'Request failed' });
+                  }
+              } catch (error) {
+                  console.error('Error fetching data:', error);
+                  res.status(500).json({ error: 'Internal server error' });
+              }
+          });
+
+          app.listen(PORT, () => {
+              console.log(`Server is running on http://localhost:${PORT}`);
+          });
+
+      - name: Commit and push cookies
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git checkout -b cookies
+          git add cookies.json
+          git commit -m "Update cookies"
+          git push -u origin cookies
